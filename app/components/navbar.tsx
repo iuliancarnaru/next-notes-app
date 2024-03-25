@@ -10,6 +10,8 @@ import { UserNav } from "./user-nav";
 
 export async function Navbar() {
   const { isAuthenticated, getUser } = getKindeServerSession();
+
+  const isAuth = await isAuthenticated();
   const user = await getUser();
 
   return (
@@ -22,11 +24,11 @@ export async function Navbar() {
         <div className="flex items-center gap-x-5">
           <ThemeToggle />
 
-          {(await isAuthenticated()) ? (
+          {isAuth ? (
             <UserNav
-              name={user?.given_name}
-              email={user?.email}
-              image={user?.picture}
+              name={user?.given_name as string}
+              email={user?.email as string}
+              image={user?.picture as string}
             />
           ) : (
             <div className="flex items-center gap-x-5">
