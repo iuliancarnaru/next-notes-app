@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { useFormStatus } from "react-dom";
 
-export function SubmitButton() {
+export function PortalButton() {
   const { pending } = useFormStatus();
 
   return (
@@ -15,7 +15,7 @@ export function SubmitButton() {
         </Button>
       ) : (
         <Button className="w-fit" type="submit">
-          Save now
+          View payment details
         </Button>
       )}
     </>
