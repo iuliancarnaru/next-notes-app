@@ -12,6 +12,7 @@ import { getStripeSession, stripe } from "@/app/lib/stripe";
 import { redirect } from "next/navigation";
 import { SubscribeButton } from "@/app/components/subscribe-button";
 import { PortalButton } from "@/app/components/portal-button";
+import { unstable_noStore as noStore } from "next/cache";
 
 const featureItems = [
   {
@@ -32,6 +33,7 @@ const featureItems = [
 ];
 
 async function getData(userId: string) {
+  noStore();
   const data = prisma.subscription.findUnique({
     where: {
       userId: userId,
