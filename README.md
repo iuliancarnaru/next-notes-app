@@ -11,6 +11,7 @@ DIRECT_URL="postgres://postgres.[host]:[password]@[db]:5432/postgres"
 STRIPE_SECRET=#
 STRIPE_API_ID=#
 STRIPE_WEBHOOK_SECRET=#
+PRODUCTION_URL=https://xxx.vercel.app
 
 Prisma commands:
 
